@@ -10,7 +10,6 @@ import { FlashCard } from 'src/app/models/flash-card';
 export class LessonContent1Component {
 
 qHowToSayGoodMorning: string = 'You are meeting your friends this morning. What do you say?';
-qHowToSayGoodMorning: string = 'You are meeting your friends this morning. What do you say?';
 
 
 flashcards: (FlashCard | null)[][] =  [
