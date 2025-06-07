@@ -1,0 +1,35 @@
+<header class="app-header" [class.menu-open]="isMenuOpen">
+  <div class="header-container">
+    <div class="logo-area">
+      <a routerLink="/" class="logo">StoryLingo</a>
+    </div>
+    <nav class="navigation-area" [class.open]="isMenuOpen">
+      <a routerLink="/language-level" routerLinkActive="active-link" (click)="isMenuOpen && toggleMenu()">course list</a>
+      <a routerLink="/stories" routerLinkActive="active-link" (click)="isMenuOpen && toggleMenu()">Stories</a>
+      <a routerLink="/grammar" routerLinkActive="active-link" (click)="isMenuOpen && toggleMenu()">Grammar</a>
+      <a routerLink="/vocabulary" routerLinkActive="active-link" (click)="isMenuOpen && toggleMenu()">Vocabulary</a>
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" (click)="toggleDropdown('caseConjugationDropdown')" (mouseenter)="openDropdown('caseConjugationDropdown')" (mouseleave)="closeDropdown('caseConjugationDropdown')">
+          Case & Conjugation Guide
+        </a>
+        <div class="dropdown-menu" [class.show]="isDropdownOpen['caseConjugationDropdown']" (mouseenter)="openDropdown('caseConjugationDropdown')" (mouseleave)="closeDropdown('caseConjugationDropdown')">
+          <a routerLink="/ein-cases" class="dropdown-item" (click)="closeAllDropdownsAndMenu()">ein cases</a>
+          <a routerLink="/mein-cases" class="dropdown-item" (click)="closeAllDropdownsAndMenu()">mein cases</a>
+          <a routerLink="/pronouns-cases" class="dropdown-item" (click)="closeAllDropdownsAndMenu()">pronouns cases</a>
+          <a routerLink="/dative-verbs" class="dropdown-item" (click)="closeAllDropdownsAndMenu()">dative verbs</a>
+          <a routerLink="/dative-prepositions" class="dropdown-item" (click)="closeAllDropdownsAndMenu()">dative Prepositions</a>
+        </div>
+      </div>
+      <a routerLink="/profile" routerLinkActive="active-link" (click)="isMenuOpen && toggleMenu()">Profile</a>
+    </nav>
+    <div class="user-actions-area" [class.open]="isMenuOpen">
+      <a routerLink="/login" class="login-button" (click)="isMenuOpen && toggleMenu()">Login</a>
+      <!-- <a routerLink="/signup" class="signup-button">Sign Up</a> -->
+    </div>
+    <button class="menu-toggle" (click)="toggleMenu()" aria-label="Toggle menu" [attr.aria-expanded]="isMenuOpen">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </div>
+</header>

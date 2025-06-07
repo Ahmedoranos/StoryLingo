@@ -1,0 +1,118 @@
+<div class="language-level-container">
+  <div class="click-demo">
+    🎯 <strong>Interactive Accordion:</strong> Click on any lesson card to expand and see detailed content! Click "Start Lesson" buttons to complete lessons and unlock new ones.
+  </div>
+
+  <!-- Header Section -->
+  <div class="header-section">
+    <h1 class="main-title">Beginner Level - English Language</h1>
+    
+    <!-- Progress Bar -->
+    <div class="progress-container">
+      <div class="progress-header">
+        <span class="progress-label">Progress</span>
+        <span class="progress-count">{{ progressStats.completed }}/30 lessons completed</span>
+      </div>
+      <div class="progress-bar">
+        <div 
+          class="progress-fill" 
+          [style.width.%]="progressStats.percentage">
+        </div>
+      </div>
+      <div class="progress-percentage">{{ progressStats.percentage }}%</div>
+    </div>
+  </div>
+
+  <!-- Lessons Grid -->
+  <div class="lessons-grid">
+    <div 
+      *ngFor="let lesson of lessons" 
+      class="lesson-card"
+      [class]="getLessonStatusClass(lesson)"
+      [class.expanded]="lesson.expanded"
+      (click)="toggleLessonExpansion(lesson.id)">
+      
+      <div class="lesson-content">
+        <div class="lesson-icon">
+          <span 
+            [class]="lesson.isCompleted || lesson.isLocked ? 'icon' : 'lesson-number'">
+            {{ getLessonIcon(lesson) }}
+          </span>
+        </div>
+        
+        <div class="lesson-info">
+          <h3 class="lesson-title">{{ lesson.title }}</h3>
+          <p class="lesson-status">{{ getLessonStatus(lesson) }}</p>
+        </div>
+        
+        <div class="lesson-action" *ngIf="!lesson.isLocked">
+          <span class="play-icon">▶</span>
+        </div>
+        
+        <div class="expand-icon">▼</div>
+      </div>
+      
+      <div class="lesson-details">
+        <div class="lesson-progress-section">
+          <div class="lesson-duration">{{ lesson.duration }}</div>
+          <div 
+            class="lesson-difficulty"
+            [class]="'difficulty-' + lesson.difficulty">
+            {{ lesson.difficulty | titlecase }}
+          </div>
+        </div>
+        
+        <div class="lesson-objectives">
+          <h4>Learning Objectives:</h4>
+          <ul>
+            <li *ngFor="let objective of lesson.objectives">{{ objective }}</li>
+          </ul>
+        </div>
+        
+        <div class="lesson-actions" (click)="$event.stopPropagation()">
+          <ng-container *ngIf="lesson.isCompleted">
+            <button class="btn btn-success" disabled>✓ Completed</button>
+            <button 
+              class="btn btn-secondary"
+              (click)="reviewLesson(lesson.id)">
+              Review Lesson
+            </button>
+          </ng-container>
+          
+          <ng-container *ngIf="lesson.isLocked">
+            <button class="btn btn-secondary" disabled>🔒 Locked</button>
+          </ng-container>
+          
+          <ng-container *ngIf="!lesson.isLocked && !lesson.isCompleted">
+            <button 
+              class="btn btn-primary"
+              (click)="startLesson(lesson.id)">
+              Start Lesson
+            </button>
+            <button 
+              class="btn btn-secondary"
+              (click)="previewLesson(lesson.id)">
+              Preview
+            </button>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Statistics Section -->
+  <div class="statistics-section">
+    <div class="stat-card completed-stat">
+      <div class="stat-number">{{ progressStats.completed }}</div>
+      <div class="stat-label">Completed</div>
+    </div>
+    <div class="stat-card available-stat">
+      <div class="stat-number">{{ progressStats.available }}</div>
+      <div class="stat-label">Available</div>
+    </div>
+    <div class="stat-card locked-stat">
+      <div class="stat-number">{{ progressStats.locked }}</div>
+      <div class="stat-label">Locked</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="sentence-prompt">
+    {{ promptText }}
+</div>
+<div class="sentence-input-area">
+  <textarea rows="3" placeholder="Type your sentence here..."></textarea>
+  <div
+    class="sentence-answer-flipper"
+    [class.flipped]="isSentenceFlipped"
+    (click)="flipSentence()">
+    <div class="flipper-inner">
+      <div class="flipper-front">
+        Reveal Answer
+      </div>
+      <div class="flipper-back">
+        {{ correctSentence }}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,217 @@
+.app-header {
+  background-color: #343a40; /* Dark background */
+  padding: 0.5rem 1rem; /* Minimal padding for small height */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px; /* Max width for content */
+  margin: 0 auto;
+  height: 40px; /* Minimal header height */
+}
+
+.logo-area .logo {
+  color: #f8f9fa; /* Light logo text */
+  font-size: 1.25rem; /* Slightly smaller logo */
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.logo-area .logo:hover {
+  color: #adb5bd; /* Lighter on hover */
+}
+
+.navigation-area {
+  display: flex;
+  gap: 0.75rem; /* Smaller gap between links */
+}
+
+.navigation-area a {
+  color: #ced4da; /* Muted link color */
+  text-decoration: none;
+  padding: 0.25rem 0.5rem; /* Minimal padding */
+  border-radius: 4px;
+  font-size: 0.9rem; /* Smaller font size */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navigation-area a:hover,
+.navigation-area a.active-link {
+  background-color: #495057; /* Darker background on hover/active */
+  color: #f8f9fa; /* Light text on hover/active */
+}
+
+.user-actions-area {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.user-actions-area .login-button {
+  background-color: #007bff; /* Primary blue */
+  color: white;
+  padding: 0.25rem 0.75rem; /* Minimal padding */
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.user-actions-area .login-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Basic styles for menu toggle - functionality would require TS */
+.menu-toggle {
+  display: none; /* Hidden by default, shown on small screens */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-toggle .bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #f8f9fa;
+  margin: 4px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navigation-area,
+  .user-actions-area {
+    display: none; /* Hide nav and user actions by default on small screens */
+    /* Further JS needed to show them when menu is toggled */
+  }
+
+  .menu-toggle {
+    display: block; /* Show menu toggle button */
+  }
+
+  .header-container {
+    justify-content: space-between;
+  }
+
+  /* Styles for when the menu is open (would be toggled by JS) */
+  .app-header.menu-open .navigation-area,
+  .app-header.menu-open .user-actions-area {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 56px; /* Adjust based on header height */
+    left: 0;
+    width: 100%;
+    background-color: #343a40;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .app-header.menu-open .navigation-area a,
+  .app-header.menu-open .user-actions-area a {
+    padding: 0.75rem 1rem;
+    width: 100%;
+    text-align: left;
+  }
+   .app-header.menu-open .user-actions-area {
+    padding-top: 0.5rem;
+    border-top: 1px solid #495057;
+  }
+}
+/* Dropdown Menu Styles */
+.nav-item.dropdown {
+  position: relative;
+}
+
+.nav-link.dropdown-toggle {
+  cursor: pointer;
+  color: #ced4da;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link.dropdown-toggle:hover,
+.nav-item.dropdown:hover .nav-link.dropdown-toggle { /* Keep active style when hovering dropdown */
+  background-color: #495057;
+  color: #f8f9fa;
+}
+
+.dropdown-menu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%; /* Position below the toggle */
+  left: 0;
+  background-color: #343a40; /* Same as header */
+  border: 1px solid #495057; /* Slightly darker border */
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  min-width: 180px; /* Minimum width for dropdown items */
+  z-index: 1001; /* Above other header content */
+  padding: 0.5rem 0;
+}
+
+.dropdown-menu.show {
+  display: block; /* Show when active */
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  clear: both;
+  font-weight: 400;
+  color: #ced4da; /* Muted item color */
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #495057; /* Darker background on hover */
+  color: #f8f9fa; /* Light text on hover */
+}
+
+/* Adjustments for mobile menu dropdown */
+@media (max-width: 768px) {
+  .app-header.menu-open .nav-item.dropdown {
+    width: 100%;
+  }
+
+  .app-header.menu-open .nav-link.dropdown-toggle {
+    display: flex; /* Allow space-between for potential arrow */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.75rem 1rem; /* Match other mobile nav links */
+  }
+
+  .app-header.menu-open .dropdown-menu {
+    position: static; /* No absolute positioning in mobile */
+    width: 100%;
+    box-shadow: none;
+    border: none;
+    border-top: 1px solid #495057; /* Separator line */
+    border-radius: 0;
+    margin-top: 0.5rem;
+    padding-left: 1rem; /* Indent dropdown items */
+  }
+   .app-header.menu-open .dropdown-item {
+    padding: 0.75rem 1.5rem; /* Adjust padding for mobile */
+  }
+}

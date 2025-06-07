@@ -1,0 +1,102 @@
+.sentence-prompt {
+  max-width: 50%;
+  margin: 2rem auto 1rem;
+  padding: 1.25rem 1.5rem;
+  background-color: #f8f9fa; /* Light background */
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #343a40;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.sentence-prompt:hover {
+  background-color: #f1f3f5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Sentence Input and Flipper Styles */
+.sentence-input-area {
+  max-width: 50%;
+  margin: 0.5rem auto 0;
+  display: flex;
+  align-items: stretch; /* Make textarea and flipper same height */
+}
+
+.sentence-input-area textarea {
+  flex-basis: 50%; /* Take 50% of the width */
+  border-radius: 8px 0 0 8px;
+  padding: 0.5rem;
+  border: 1px solid #ced4da; /* Bootstrap-like border color */
+  border-right: none;
+  resize: none;
+  font-family: inherit; /* Inherit font from parent */
+  font-size: 0.9rem;
+}
+
+.sentence-input-area textarea:focus {
+  outline: none;
+  border-color: #80bdff; /* Bootstrap focus color */
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Bootstrap focus shadow */
+}
+
+.sentence-answer-flipper {
+  flex-basis: 50%; /* Take 50% of the width */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e9ecef; /* Light grey background */
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  border: 1px solid #ced4da;
+  position: relative; /* For positioning inner elements */
+  perspective: 1000px; /* For 3D flip effect */
+  transition: background-color 0.3s ease;
+}
+
+.sentence-answer-flipper:hover {
+  background-color: #dde2e6; /* Slightly darker on hover */
+}
+
+.sentence-answer-flipper .flipper-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.sentence-answer-flipper.flipped .flipper-inner {
+  transform: rotateY(180deg);
+}
+
+.sentence-answer-flipper .flipper-front,
+.sentence-answer-flipper .flipper-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.sentence-answer-flipper .flipper-front {
+  color: #495057; /* Dark grey text */
+}
+
+.sentence-answer-flipper .flipper-back {
+  background-color: #28a745; /* Green background for answer */
+  color: white;
+  transform: rotateY(180deg);
+  border-radius: 0 7px 7px 0; /* Match parent rounding, adjust for border */
+  line-height: 1.3;
+}

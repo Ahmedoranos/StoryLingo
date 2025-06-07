@@ -1,0 +1,94 @@
+<!-- german-flashcards.component.html -->
+<div class="accordion-body">
+    <div class="container premium-word-group-display">
+      <!-- Header Row with proper alignment -->
+      <div class="row premium-word-group-header">
+        <div class="col-3">
+          <div class="header-cell">Der</div>
+        </div>
+        <div class="col-3">
+          <div class="header-cell">Die</div>
+        </div>
+        <div class="col-3">
+          <div class="header-cell">Das</div>
+        </div>
+        <div class="col-3">
+          <div class="header-cell">Plural / Die</div>
+        </div>
+      </div>
+   
+      <!-- Data Rows with matching column structure -->
+      <div class="row card-row" *ngFor="let row of flashcards">
+        <!-- Der column -->
+        <div class="col-3">
+          <div 
+            *ngIf="row[0]" 
+            class="premium-word-card" 
+            [class.flipped]="row[0].isFlipped"
+            (click)="flipCard(row[0])">
+            <div class="card-inner">
+              <div class="card-front">{{ row[0].german }}</div>
+              <div class="card-back">{{ row[0].english }}</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Die column -->
+        <div class="col-3">
+          <div 
+            *ngIf="row[1]" 
+            class="premium-word-card" 
+            [class.flipped]="row[1].isFlipped"
+            (click)="flipCard(row[1])">
+            <div class="card-inner">
+              <div class="card-front">{{ row[1].german }}</div>
+              <div class="card-back">{{ row[1].english }}</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Das column -->
+        <div class="col-3">
+          <div 
+            *ngIf="row[2]" 
+            class="premium-word-card" 
+            [class.flipped]="row[2].isFlipped"
+            (click)="flipCard(row[2])">
+            <div class="card-inner">
+              <div class="card-front">{{ row[2].german }}</div>
+              <div class="card-back">{{ row[2].english }}</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Plural/Die column -->
+        <div class="col-3">
+          <div 
+            *ngIf="row[3]" 
+            class="premium-word-card" 
+            [class.flipped]="row[3].isFlipped"
+            (click)="flipCard(row[3])">
+            <div class="card-inner">
+              <div class="card-front">{{ row[3].german }}</div>
+              <div class="card-back">{{ row[3].english }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   <app-construct-question
+    [promptText]="'Try to construct a sentence in which you say: the woman gives me a book'"
+    [correctSentence]="'Die Frau gibt mir ein Buch.'">
+  </app-construct-question>
+
+<app-construct-question
+    [promptText]="'Try to construct a sentence in which you say: the woman gives me a book'"
+    [correctSentence]="'Die Frau gibt mir ein Buch.'">
+  </app-construct-question>
+
+<app-verb-table
+  [verbConjugations]=verbConjugations>
+</app-verb-table>
+   
+
+</div>

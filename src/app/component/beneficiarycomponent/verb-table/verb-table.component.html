@@ -1,0 +1,20 @@
+<div class="container pronoun-table-display">
+      <h4>German Pronouns</h4>
+      <div class="row pronoun-table-header">
+        <div class="col-2">ich</div>
+        <div class="col-2">du</div>
+        <div class="col-2">er/es/sie</div>
+        <div class="col-2">wir</div>
+        <div class="col-2">ihr</div>
+        <div class="col-2">Sie/sie</div>
+      </div>
+      <!-- Verb Conjugation Rows -->
+      <div *ngFor="let conjugation of verbConjugations" class="row">
+        <div class="col-2">{{ conjugation.ich }}</div>
+        <div class="col-2">{{ conjugation.du }}</div>
+        <div class="col-2">{{ conjugation.erEsSie }}</div>
+        <div class="col-2">{{ conjugation.wir }}</div>
+        <div class="col-2">{{ conjugation.ihr }}</div>
+        <div class="col-2">{{ conjugation.SieSie }}</div>
+      </div>
+    </div>

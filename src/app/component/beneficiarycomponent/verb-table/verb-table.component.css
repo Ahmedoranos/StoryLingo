@@ -1,0 +1,52 @@
+.pronoun-table-display {
+  max-width: 50%;
+  margin: 2rem auto 0; /* Same margin as premium-word-group-display */
+  padding: 1rem;
+  background-color: #ffffff; /* White background */
+  border-radius: 12px; /* Slightly smaller border radius */
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.15);
+  border: 1px solid #dee2e6; /* Light grey border */
+}
+
+.pronoun-table-display h4 {
+  text-align: center;
+  margin-bottom: 1.5rem; /* More space below title */
+  color: #343a40; /* Darker heading color */
+  font-weight: 600;
+}
+
+.pronoun-table-header {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.75rem; /* Space below header row */
+  padding: 0.75rem 0.5rem; /* Adjusted padding */
+  background-color: #e9ecef; /* Light grey background for header */
+  border-radius: 8px;
+  color: #495057; /* Bootstrap muted text color */
+  font-size: 0.95rem;
+}
+
+.pronoun-table-header .col-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Styles for potential future data rows in the pronoun table */
+.pronoun-table-display .row:not(.pronoun-table-header) {
+  text-align: center;
+  padding: 0.75rem 0.5rem;
+  border-bottom: 1px solid #f1f3f5; /* Light separator line for rows */
+}
+
+.pronoun-table-display .row:not(.pronoun-table-header):last-child {
+  border-bottom: none; /* No border for the last data row */
+}
+
+.pronoun-table-display .row:not(.pronoun-table-header) .col-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px; /* Ensure cells have some height */
+  font-size: 0.9rem;
+}
