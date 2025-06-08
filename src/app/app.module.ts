@@ -21,6 +21,7 @@ import { LessonContent10Component } from './component/beneficiarycomponent/lesso
 import { WordCardComponent } from './component/beneficiarycomponent/word-card/word-card.component';
 import { WordCardNoHeaderComponent } from './component/beneficiarycomponent/word-card-no-header/word-card-no-header.component';
 import { LessonContentB11Component } from './component/beneficiarycomponent/lesson-content/lesson-content-b1/lesson-content-b1-1/lesson-content-b1-1.component';
+import { GrammarRoleComponent } from './component/beneficiarycomponent/grammar-role/grammar-role.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { LessonContentB11Component } from './component/beneficiarycomponent/less
     WordCardComponent,
     WordCardNoHeaderComponent,
     LessonContentB11Component,
+    GrammarRoleComponent,
   ],
   imports: [
     BrowserModule,

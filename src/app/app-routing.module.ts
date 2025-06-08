@@ -10,6 +10,7 @@ import { PronounsCasesComponent } from './component/beneficiarycomponent/pronoun
 import { LanguageLevelComponent } from './component/beneficiarycomponent/language-level/language-level.component';
 import { LessonContent1Component } from './component/beneficiarycomponent/lesson-content/lesson-content-1/lesson-content-1.component';
 import { WordCardNoHeaderComponent } from './component/beneficiarycomponent/word-card-no-header/word-card-no-header.component';
+import { GrammarRoleComponent } from './component/beneficiarycomponent/grammar-role/grammar-role.component';
 
 const routes: Routes = [
   { path: 'word-groups', component: WordGroupComponent },
@@ -22,7 +23,7 @@ const routes: Routes = [
   { path: 'language-level', component: LanguageLevelComponent } ,
   { path: 'app-lesson-content-1', component: LessonContent1Component } ,
   { path: 'wordcard-noheader', component: WordCardNoHeaderComponent } ,
-
+  { path: 'grammar-role', component: GrammarRoleComponent } ,
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
