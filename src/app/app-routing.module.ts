@@ -11,6 +11,7 @@ import { LanguageLevelComponent } from './component/beneficiarycomponent/languag
 import { LessonContent1Component } from './component/beneficiarycomponent/lesson-content/lesson-content-1/lesson-content-1.component';
 import { WordCardNoHeaderComponent } from './component/beneficiarycomponent/word-card-no-header/word-card-no-header.component';
 import { GrammarRoleComponent } from './component/beneficiarycomponent/grammar-role/grammar-role.component';
+import { LessonContentB11Component } from './component/beneficiarycomponent/lesson-content/lesson-content-b1/lesson-content-b1-1/lesson-content-b1-1.component';
 
 const routes: Routes = [
   { path: 'word-groups', component: WordGroupComponent },
@@ -24,6 +25,8 @@ const routes: Routes = [
   { path: 'app-lesson-content-1', component: LessonContent1Component } ,
   { path: 'wordcard-noheader', component: WordCardNoHeaderComponent } ,
   { path: 'grammar-role', component: GrammarRoleComponent } ,
+  { path: 'lesson-content-b1-1', component: LessonContentB11Component } ,
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
