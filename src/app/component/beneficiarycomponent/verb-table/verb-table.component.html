@@ -1,20 +1,25 @@
 <div class="container pronoun-table-display">
-      <h4>German Pronouns</h4>
-      <div class="row pronoun-table-header">
-        <div class="col-2">ich</div>
-        <div class="col-2">du</div>
-        <div class="col-2">er/es/sie</div>
-        <div class="col-2">wir</div>
-        <div class="col-2">ihr</div>
-        <div class="col-2">Sie/sie</div>
-      </div>
-      <!-- Verb Conjugation Rows -->
-      <div *ngFor="let conjugation of verbConjugations" class="row">
-        <div class="col-2">{{ conjugation.ich }}</div>
-        <div class="col-2">{{ conjugation.du }}</div>
-        <div class="col-2">{{ conjugation.erEsSie }}</div>
-        <div class="col-2">{{ conjugation.wir }}</div>
-        <div class="col-2">{{ conjugation.ihr }}</div>
-        <div class="col-2">{{ conjugation.SieSie }}</div>
-      </div>
-    </div>
+  <h4>German Pronouns</h4>
+  
+  <div class="pronoun-grid">
+    <!-- Headers -->
+    <div class="pronoun-table-header">ich</div>
+    <div class="pronoun-table-header">du</div>
+    <div class="pronoun-table-header">er/es/sie</div>
+    <div class="pronoun-table-header">wir</div>
+    <div class="pronoun-table-header">ihr</div>
+    <div class="pronoun-table-header">Sie/sie</div>
+    <div class="pronoun-table-header">Partizip II</div>
+    
+    <!-- Data rows using *ngFor -->
+    <ng-container *ngFor="let conjugation of verbConjugations">
+      <div class="pronoun-data-cell">{{ conjugation.ich }}</div>
+      <div class="pronoun-data-cell">{{ conjugation.du }}</div>
+      <div class="pronoun-data-cell">{{ conjugation.erEsSie }}</div>
+      <div class="pronoun-data-cell">{{ conjugation.wir }}</div>
+      <div class="pronoun-data-cell">{{ conjugation.ihr }}</div>
+      <div class="pronoun-data-cell">{{ conjugation.SieSie }}</div>
+      <div class="pronoun-data-cell">{{ conjugation.partizipII }}</div>
+    </ng-container>
+  </div>
+</div>

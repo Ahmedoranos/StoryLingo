@@ -1,5 +1,5 @@
 .pronoun-table-display {
-  max-width: 50%;
+  max-width: 60%;
   margin: 2rem auto 0; /* Same margin as premium-word-group-display */
   padding: 1rem;
   background-color: #ffffff; /* White background */
@@ -15,38 +15,106 @@
   font-weight: 600;
 }
 
+/* CSS Grid container */
+.pronoun-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Header row styling */
 .pronoun-table-header {
   font-weight: bold;
   text-align: center;
-  margin-bottom: 0.75rem; /* Space below header row */
   padding: 0.75rem 0.5rem; /* Adjusted padding */
   background-color: #e9ecef; /* Light grey background for header */
   border-radius: 8px;
   color: #495057; /* Bootstrap muted text color */
   font-size: 0.95rem;
-}
-
-.pronoun-table-header .col-2 {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Styles for potential future data rows in the pronoun table */
-.pronoun-table-display .row:not(.pronoun-table-header) {
+/* Data cell styling */
+.pronoun-data-cell {
   text-align: center;
   padding: 0.75rem 0.5rem;
-  border-bottom: 1px solid #f1f3f5; /* Light separator line for rows */
-}
-
-.pronoun-table-display .row:not(.pronoun-table-header):last-child {
-  border-bottom: none; /* No border for the last data row */
-}
-
-.pronoun-table-display .row:not(.pronoun-table-header) .col-2 {
+  border-bottom: 1px solid #f1f3f5; /* Light separator line for cells */
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 40px; /* Ensure cells have some height */
   font-size: 0.9rem;
+  background-color: #ffffff;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.pronoun-data-cell:hover {
+  background-color: #f8f9fa;
+}
+
+/* Remove border from last row */
+.pronoun-grid .pronoun-data-cell:nth-last-child(-n+7) {
+  border-bottom: none;
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+  .pronoun-table-display {
+    max-width: 80%;
+  }
+  
+  .pronoun-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.4rem;
+  }
+  
+  .pronoun-table-header,
+  .pronoun-data-cell {
+    font-size: 0.85rem;
+    padding: 0.6rem 0.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .pronoun-table-display {
+    max-width: 95%;
+    margin: 1rem auto 0;
+    padding: 0.8rem;
+  }
+  
+  .pronoun-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.3rem;
+  }
+  
+  .pronoun-table-header,
+  .pronoun-data-cell {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.3rem;
+    min-height: 35px;
+  }
+}
+
+@media (max-width: 576px) {
+  .pronoun-table-display {
+    max-width: 100%;
+    margin: 0.5rem auto 0;
+    padding: 0.6rem;
+  }
+  
+  .pronoun-grid {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+  
+  .pronoun-table-header,
+  .pronoun-data-cell {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.2rem;
+    min-height: 30px;
+  }
 }

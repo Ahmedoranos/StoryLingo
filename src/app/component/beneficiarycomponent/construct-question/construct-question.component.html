@@ -1,18 +1,36 @@
-<div class="sentence-prompt">
-    {{ promptText }}
-</div>
-<div class="sentence-input-area">
-  <textarea rows="3" class="bold-uppercase" placeholder="Type your sentence here..."></textarea>
-  <div
-    class="sentence-answer-flipper"
-    [class.flipped]="isSentenceFlipped"
-    (click)="flipSentence()">
-    <div class="flipper-inner">
-      <div class="flipper-front">
-        Reveal Answer
+<div class="questions-wrapper" [class.collapsed]="isCollapsed">
+  <div class="questions-header" (click)="toggleQuestions()">
+    <h2 class="header-title">Interaktive Fragen / Interactive Questions</h2>
+    <svg class="toggle-icon" fill="currentColor" viewBox="0 0 20 20">
+      <path
+        fill-rule="evenodd"
+        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  </div>
+
+  <div class="questions-content">
+    <div class="question-container" *ngFor="let question of questionList; let i = index">
+      <div class="sentence-prompt">
+        Question: {{ question.questionText }}
       </div>
-      <div class="flipper-back">
-        {{ correctSentence }}
+      <div class="sentence-input-area">
+        <textarea
+          rows="3"
+          class="modern-textarea"
+          placeholder="Type your answer here..."
+        ></textarea>
+        <div class="sentence-answer-flipper" [class.flipped]="question.flipped" (click)="flipAnswer(i)">
+          <div class="flipper-inner">
+            <div class="flipper-front">
+              Reveal Answer
+            </div>
+            <div class="flipper-back">
+              {{ question.questionAnswer }}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

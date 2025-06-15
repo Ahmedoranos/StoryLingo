@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Question } from 'src/app/models/question';
 
 @Component({
   selector: 'app-construct-question',
@@ -6,22 +7,33 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./construct-question.component.css']
 })
 export class ConstructQuestionComponent {
-  @Input() promptText: string = '';  
-  @Input() correctSentence: string = '';  
   isSentenceFlipped: boolean = false;
+  @Input() questionList: Question[] = [];
 
-    flipSentence(): void {
-    this.isSentenceFlipped = !this.isSentenceFlipped;
+
+ isCollapsed = false;
+
+  toggleQuestions(): void {
+    this.isCollapsed = !this.isCollapsed;
+  }
+
+  flipAnswer(index: number): void 
+  {
+    this.questionList[index].flipped = !this.questionList[index].flipped;
 
     // Pronounce the correct sentence if it's being revealed
-    if (this.isSentenceFlipped) {
+    if (this.questionList[index].flipped)
+      {
       if ('speechSynthesis' in window) {
-        const utterance = new SpeechSynthesisUtterance(this.correctSentence);
+        const utterance = new SpeechSynthesisUtterance(this.questionList[index].questionAnswer);
         utterance.lang = 'de-DE'; // Set language to German
         window.speechSynthesis.speak(utterance);
       } else {
         console.warn('Speech synthesis not supported in this browser.');
       }
     }
+
   }
+
+
 }
