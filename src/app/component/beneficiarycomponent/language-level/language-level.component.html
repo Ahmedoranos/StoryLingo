@@ -46,7 +46,10 @@
         </div>
         
         <div class="lesson-action" *ngIf="!lesson.isLocked">
+          <a [routerLink]="lesson.lessonLink">
+            <span class="lesson-link-text"></span>
           <span class="play-icon">▶</span>
+          </a>
         </div>
         
         <div class="expand-icon">▼</div>

@@ -311,6 +311,10 @@
             align-items: center;
         }
 
+        .lesson-action a{ 
+            text-decoration: none;
+        }
+
         .play-icon {
             color: #3b82f6;
             font-size: 16px;

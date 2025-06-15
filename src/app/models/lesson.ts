@@ -7,4 +7,5 @@ export interface Lesson {
   objectives: string[];
   duration: string;
   difficulty: 'beginner' | 'intermediate';
+  lessonLink?: string; // Optional link to lesson content
 }

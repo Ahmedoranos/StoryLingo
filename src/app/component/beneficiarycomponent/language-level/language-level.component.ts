@@ -16,6 +16,16 @@ export class LanguageLevelComponent implements OnInit{
     percentage: 0
   };
 
+  private readonly lessonLinks: string[] = [
+    '/greetings', '/greetings', '/greetings', '/family', '/greetings',
+    '/greetings', 'Family Members', 'Days of the Week',
+    'Months', 'Weather', 'Food & Drinks', 'Body Parts', 'Clothing',
+    'Animals', 'Transportation', 'House & Home', 'School Supplies', 'Jobs & Professions',
+    'Hobbies', 'Sports', 'Music', 'Technology', 'Shopping',
+    'Restaurant', 'Travel', 'Health', 'Emotions', 'Time',
+    'Directions', 'Nature', 'Holidays', 'Friendship', 'Review & Assessment'
+  ];
+
   private readonly lessonTopics: string[] = [
     'Basic Greetings', 'Numbers 1-10', 'Colors', 'Family Members', 'Days of the Week',
     'Months', 'Weather', 'Food & Drinks', 'Body Parts', 'Clothing',
@@ -72,7 +82,8 @@ export class LanguageLevelComponent implements OnInit{
       expanded: false,
       objectives: this.lessonObjectives[index],
       duration: `${Math.floor(Math.random() * 15) + 10} min`,
-      difficulty: index < 10 ? 'beginner' : index < 20 ? 'intermediate' : 'beginner'
+      difficulty: index < 10 ? 'beginner' : index < 20 ? 'intermediate' : 'beginner',
+      lessonLink: this.lessonLinks[index]
     }));
   }
 

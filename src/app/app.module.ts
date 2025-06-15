@@ -22,6 +22,20 @@ import { WordCardComponent } from './component/beneficiarycomponent/word-card/wo
 import { WordCardNoHeaderComponent } from './component/beneficiarycomponent/word-card-no-header/word-card-no-header.component';
 import { LessonContentB11Component } from './component/beneficiarycomponent/lesson-content/lesson-content-b1/lesson-content-b1-1/lesson-content-b1-1.component';
 import { GrammarRoleComponent } from './component/beneficiarycomponent/grammar-role/grammar-role.component';
+import { LessonContentB12Component } from './component/beneficiarycomponent/lesson-content/lesson-content-b1/lesson-content-b1-2/lesson-content-b1-2.component';
+import { AirportComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/airport/airport.component';
+import { TrainstationComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/trainstation/trainstation.component';
+import { FamilyComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/family/family.component';
+import { ShoppingComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/shopping/shopping.component';
+import { HouseComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/house/house.component';
+import { GroceryComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/grocery/grocery.component';
+import { FruitComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/fruit/fruit.component';
+import { FinancialsComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/financials/financials.component';
+import { HumanBodyComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/human-body/human-body.component';
+import { ParkComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/park/park.component';
+import { GeneralComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/general/general.component';
+import { SchoolComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/school/school.component';
+import { GreetingsComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/greetings/greetings.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +59,20 @@ import { GrammarRoleComponent } from './component/beneficiarycomponent/grammar-r
     WordCardNoHeaderComponent,
     LessonContentB11Component,
     GrammarRoleComponent,
+    LessonContentB12Component,
+    AirportComponent,
+    TrainstationComponent,
+    FamilyComponent,
+    ShoppingComponent,
+    HouseComponent,
+    GroceryComponent,
+    FruitComponent,
+    FinancialsComponent,
+    HumanBodyComponent,
+    ParkComponent,
+    GeneralComponent,
+    SchoolComponent,
+    GreetingsComponent,
   ],
   imports: [
     BrowserModule,

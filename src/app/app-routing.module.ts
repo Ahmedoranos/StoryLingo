@@ -12,6 +12,10 @@ import { LessonContent1Component } from './component/beneficiarycomponent/lesson
 import { WordCardNoHeaderComponent } from './component/beneficiarycomponent/word-card-no-header/word-card-no-header.component';
 import { GrammarRoleComponent } from './component/beneficiarycomponent/grammar-role/grammar-role.component';
 import { LessonContentB11Component } from './component/beneficiarycomponent/lesson-content/lesson-content-b1/lesson-content-b1-1/lesson-content-b1-1.component';
+import { AirportComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/airport/airport.component'; 
+import { TrainstationComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/trainstation/trainstation.component';
+import { GreetingsComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/greetings/greetings.component';
+import { FamilyComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/family/family.component';
 
 const routes: Routes = [
   { path: 'word-groups', component: WordGroupComponent },
@@ -26,7 +30,10 @@ const routes: Routes = [
   { path: 'wordcard-noheader', component: WordCardNoHeaderComponent } ,
   { path: 'grammar-role', component: GrammarRoleComponent } ,
   { path: 'lesson-content-b1-1', component: LessonContentB11Component } ,
-
+  { path: 'airport', component: AirportComponent } ,
+  { path: 'train-station', component: TrainstationComponent } ,
+  { path: 'greetings', component: GreetingsComponent } ,
+  { path: 'family', component: FamilyComponent } ,
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
