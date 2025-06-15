@@ -115,6 +115,25 @@ export class FamilyComponent {
         ,
         { german: 'die Eltern', english: 'the parents', isFlipped: false }
       ],
+        [
+        { german: 'der Sohn', english: 'the son', isFlipped: false }
+        ,
+        null
+        ,
+        null
+        ,
+        { german: 'die Söhne', english: 'the sons', isFlipped: false }
+      ],
+        [
+        null
+        ,
+        { german: 'die Tochter', english: 'the daughter', isFlipped: false }
+
+        ,
+        null
+        ,
+        { german: 'die Töchter', english: 'the daughters', isFlipped: false }
+      ],
     ]
  verbConjugations : VerbConjugation[] = [
   {

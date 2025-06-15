@@ -39,7 +39,7 @@ export class LanguageLevelComponent implements OnInit{
     ['Learn common greeting phrases', 'Practice pronunciation', 'Role-play conversations'],
     ['Count from 1 to 10', 'Use numbers in sentences', 'Practice number games'],
     ['Identify basic colors', 'Describe objects by color', 'Color vocabulary quiz'],
-    ['Name family members', 'Describe family relationships', 'Talk about your family'],
+    ['Name family members', 'Describe family interactions', 'Talk about your family','13 new words',"4 new verbs"],
     ['Learn days of the week', 'Use days in sentences', 'Weekly schedule practice'],
     ['Name all months', 'Talk about seasons', 'Date and time expressions'],
     ['Describe weather conditions', 'Weather vocabulary', 'Make weather predictions'],
