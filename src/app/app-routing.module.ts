@@ -16,6 +16,9 @@ import { AirportComponent } from './component/beneficiarycomponent/lesson-conten
 import { TrainstationComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/trainstation/trainstation.component';
 import { GreetingsComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/greetings/greetings.component';
 import { FamilyComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/family/family.component';
+import { WeatherComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/weather/weather.component';
+import { TimeComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/time/time.component';
+import { LandingPageComponent } from './component/beneficiarycomponent/landing-page/landing-page.component';
 
 const routes: Routes = [
   { path: 'word-groups', component: WordGroupComponent },
@@ -34,6 +37,9 @@ const routes: Routes = [
   { path: 'train-station', component: TrainstationComponent } ,
   { path: 'greetings', component: GreetingsComponent } ,
   { path: 'family', component: FamilyComponent } ,
+  { path: 'weather', component: WeatherComponent } ,
+  { path: 'time-day', component: TimeComponent } ,
+  { path: 'landing-page', component: LandingPageComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -18,7 +18,7 @@ export class LanguageLevelComponent implements OnInit{
 
   private readonly lessonLinks: string[] = [
     '/greetings', '/greetings', '/greetings', '/family', '/greetings',
-    '/greetings', 'Family Members', 'Days of the Week',
+    '/greetings', '/weather', 'Days of the Week',
     'Months', 'Weather', 'Food & Drinks', 'Body Parts', 'Clothing',
     'Animals', 'Transportation', 'House & Home', 'School Supplies', 'Jobs & Professions',
     'Hobbies', 'Sports', 'Music', 'Technology', 'Shopping',
@@ -42,7 +42,7 @@ export class LanguageLevelComponent implements OnInit{
     ['Name family members', 'Describe family interactions', 'Talk about your family','13 new words',"4 new verbs"],
     ['Learn days of the week', 'Use days in sentences', 'Weekly schedule practice'],
     ['Name all months', 'Talk about seasons', 'Date and time expressions'],
-    ['Describe weather conditions', 'Weather vocabulary', 'Make weather predictions'],
+    ['Describe weather conditions', 'Weather vocabulary', 'Make weather predictions', '5 new words', '2 new verbs', '10 new adjective'],
     ['Food and drink vocabulary', 'Order food in English', 'Cooking terms'],
     ['Learn body part names', 'Health-related expressions', 'Describing symptoms'],
     ['Clothing vocabulary', 'Describe what you wear', 'Shopping for clothes'],

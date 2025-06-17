@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WordGroupComponent } from './component/beneficiarycomponent/word-group/word-group.component';
@@ -36,6 +35,9 @@ import { ParkComponent } from './component/beneficiarycomponent/lesson-content/l
 import { GeneralComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/general/general.component';
 import { SchoolComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/school/school.component';
 import { GreetingsComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/greetings/greetings.component';
+import { WeatherComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/weather/weather.component';
+import { TimeComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/time/time.component';
+import { LandingPageComponent } from './component/beneficiarycomponent/landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +75,9 @@ import { GreetingsComponent } from './component/beneficiarycomponent/lesson-cont
     GeneralComponent,
     SchoolComponent,
     GreetingsComponent,
+    WeatherComponent,
+    TimeComponent,
+    LandingPageComponent,
   ],
   imports: [
     BrowserModule,

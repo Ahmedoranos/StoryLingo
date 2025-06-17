@@ -1,0 +1,94 @@
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Master Any Language with Interactive Learning</h1>
+        <p class="subtitle">Personalized study plans that adapt to your pace</p>
+        <p class="description">
+          Experience the future of language learning with AI-powered interactive courses, 
+          real-time progress tracking, and competitive challenges that make learning engaging and effective.
+        </p>
+        
+        <div class="cta-buttons">
+          <a href="#" class="btn btn-primary" (click)="onStartLearning($event)">Start Learning Free</a>
+          <a href="#" class="btn btn-secondary" (click)="onExploreCourses($event)">Explore Courses</a>
+        </div>
+      </div>
+      
+      <div class="hero-visual">
+        <div class="learning-dashboard">
+          <h3 style="color: #2d3748; margin-bottom: 20px;">📊 Your Learning Journey</h3>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+            <span style="color: #718096;">Spanish Progress</span>
+            <span style="color: #667eea; font-weight: 600;">{{ progressPercentage }}%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" [style.width.%]="progressPercentage"></div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 25px;">
+            <div style="text-align: center; padding: 15px; background: #f7fafc; border-radius: 8px;">
+              <div style="font-size: 1.5rem; font-weight: 700; color: #667eea;">{{ dayStreak }}</div>
+              <div style="font-size: 0.9rem; color: #718096;">Day Streak</div>
+            </div>
+            <div style="text-align: center; padding: 15px; background: #f7fafc; border-radius: 8px;">
+              <div style="font-size: 1.5rem; font-weight: 700; color: #667eea;">{{ wordsLearned | number }}</div>
+              <div style="font-size: 0.9rem; color: #718096;">Words Learned</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container">
+    <h2>Why Choose Our Platform?</h2>
+    <p class="features-subtitle">
+      Experience language learning like never before with our cutting-edge features designed to accelerate your progress
+    </p>
+    
+    <div class="features-grid">
+      <div class="feature-card" *ngFor="let feature of features">
+        <div class="feature-icon">{{ feature.icon }}</div>
+        <h3>{{ feature.title }}</h3>
+        <p>{{ feature.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats" #statsSection>
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <h3>{{ animatedStats.students | number }}</h3>
+        <p>Active Students</p>
+      </div>
+      <div class="stat-item">
+        <h3>{{ animatedStats.languages }}</h3>
+        <p>Languages Available</p>
+      </div>
+      <div class="stat-item">
+        <h3>{{ animatedStats.completionRate }}%</h3>
+        <p>Course Completion Rate</p>
+      </div>
+      <div class="stat-item">
+        <h3>{{ animatedStats.satisfactionRate }}%</h3>
+        <p>Student Satisfaction</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>Ready to Start Your Language Journey?</h2>
+    <p>
+      Join thousands of successful language learners who have transformed their lives with our interactive courses. 
+      Start your free trial today!
+    </p>
+    <a href="#" class="btn btn-primary" style="margin-right: 20px;" (click)="onGetStarted($event)">Get Started Free</a>
+    <a href="#" class="btn btn-secondary" (click)="onViewCourses($event)">View All Courses</a>
+  </div>
+</section>
