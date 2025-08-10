@@ -1,7 +1,41 @@
+<app-word-card-title [title]="title" 
+[description]="description" 
+[emoji]="emoji" 
+[lessonWordCount]="lessonWordCount" 
+[secondFlag]="familyWordsSecondFlag"
+[howItWork]="familyHowItWorks"
+[quizRouteLink]="quizLink"
+>
+    <app-check-note [checkNote]="checkNote"></app-check-note>
+    <app-check-note [checkNote]="checkNote1"></app-check-note>
+    <app-check-note [checkNote]="checkNote2"></app-check-note>
+    <app-check-note [checkNote]="checkNote3"></app-check-note>
+    <app-check-note [checkNote]="checkNote4"></app-check-note>
+</app-word-card-title>
 <app-word-card [flashcards]="flashcards"></app-word-card>
+
+
+
+<app-word-card-title [title]="titleForVerbTable" 
+[description]="descriptionForVerbTable" 
+[emoji]="emoji" 
+[lessonWordCount]="verbWordCount" 
+[secondFlag]="verbSecondFlag"
+[howItWork]="verbHowItWorks">
+    <app-check-note [checkNote]="checkNoteVerb"></app-check-note>
+    <app-check-note [checkNote]="checkNoteVerb1"></app-check-note>
+    <app-check-note [checkNote]="checkNoteVerb2"></app-check-note>
+    <app-check-note [checkNote]="checkNoteVerb3"></app-check-note>
+    <app-check-note [checkNote]="checkNoteVerb4"></app-check-note>
+    <app-check-note [checkNote]="checkNoteVerb5"></app-check-note>
+    <app-check-note [checkNote]="checkNoteVerb6"></app-check-note>
+</app-word-card-title>
+
+
+
 <app-verb-table [verbConjugations]="verbConjugations"></app-verb-table>
- <app-construct-question [questionList]="questionList1"></app-construct-question>
- <app-construct-question [questionList]="questionList2"></app-construct-question>
- <app-construct-question [questionList]="questionList3"></app-construct-question>
- <app-construct-question [questionList]="questionList4"></app-construct-question>
-   
+<app-construct-question [questionList]="questionList1"></app-construct-question>
+<app-construct-question [questionList]="questionList2"></app-construct-question>
+<app-construct-question [questionList]="questionList3"></app-construct-question>
+<app-construct-question [questionList]="questionList4"></app-construct-question>
+<app-word-card-title [title]="titleForDialogue" [description]="descriptionForDialogue" [emoji]="emojiForDialogue"></app-word-card-title>

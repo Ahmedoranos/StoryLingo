@@ -6,5 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./grammar-role.component.css']
 })
 export class GrammarRoleComponent {
-  @Input() titile:string = '';
+  @Input() grammarRoleTitle:string = '';
+  @Input() grammarRoleSubTitile:string = '';
+  @Input() grammarMainText:string = '';
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FlashCard } from 'src/app/models/flash-card';
 import { VerbConjugation } from 'src/app/models/verb-conjugation';
 import { Question } from 'src/app/models/question';
+import { WordCardTitleComponent } from '../../word-card-title/word-card-title.component';
 
 @Component({
   selector: 'app-family',
@@ -9,6 +10,55 @@ import { Question } from 'src/app/models/question';
   styleUrls: ['./family.component.css']
 })
 export class FamilyComponent {
+
+quizLink = '/family-words-quiz';
+title = 'Family Vocabulary List';
+familyWordsSecondFlag = 'Audio Included'
+description = 'Master German family vocabulary with interactive learning!';
+emoji = '📖';
+familyHowItWorks = 'Browse through flashcards, listen to pronunciations, and practice until youre confident with each word.';
+
+
+
+titleForDialogue = 'Dialogue Practice';
+descriptionForDialogue = 'This is an exercises to improve your speaking and listening skills';
+emojiForDialogue = '🎧';
+lessonWordCount = '13 Essential words';
+
+
+checkNote  = '13 essential family member words in German';
+checkNote1 = 'This lesson includes audio pronunciation for each word.';
+checkNote2 = 'Practice speaking by repeating the words after listening to the audio.';
+checkNote3 = 'Use the flashcards to test your memory and recognition of family vocabulary.';
+checkNote4 = "Note plural forms only words like (die Eltern, die Geschwister)"
+
+
+
+titleForVerbTable = 'Verb Conjugation Practice';
+descriptionForVerbTable = 'Practice conjugating the verbs "kennen", "anrufen", "einladen", and "besuchen"';
+emojiForVerbTable = '📚'  ;
+verbWordCount = '4 Essential Verbs';
+verbSecondFlag = 'Present / Past tense conjugation';
+verbHowItWorks = 'Review the verb conjugation table carefully, then practice what you’ve learned in the interactive question section below.';
+
+
+checkNoteVerb = 'How to say that you know someone using "kennen".';
+checkNoteVerb1 = 'How to call someone on the phone with "anrufen".';
+checkNoteVerb2 = 'How to invite someone to an event using "einladen".';
+checkNoteVerb3 = 'How to say you\'re visiting someone with "besuchen".';
+checkNoteVerb4 = 'When and how to use each verb correctly in a sentence.';
+checkNoteVerb5 = 'The correct cases (like accusative) that go with each verb.';
+checkNoteVerb6 = 'Practice examples and everyday situations with these verbs.';
+
+
+
+
+
+
+
+
+
+
    flashcards: (FlashCard | null)[][] = [
       [
         null

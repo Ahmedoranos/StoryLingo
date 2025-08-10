@@ -9,7 +9,9 @@ import { Question } from 'src/app/models/question';
 })
 export class WeatherComponent {
 
-grammarRolesTitle: string = 'Grammar Roles';
+grammarRoleTitle: string = 'Word Order';
+grammarRoleSubTitle: string = 'Correct Word Order with Time Adverbs in German Sentences';
+grammarMainText: string = 'In German, the word order in sentences can change based on the presence of time adverbs. The general structure is Subject - Verb - Time Adverb - Object. For example, "Ich gehe heute ins Kino" (I am going to the cinema today). The time adverb "heute" (today) comes after the verb "gehe" (am going).';
 
 
 

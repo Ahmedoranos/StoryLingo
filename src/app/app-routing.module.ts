@@ -19,6 +19,10 @@ import { FamilyComponent } from './component/beneficiarycomponent/lesson-content
 import { WeatherComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/weather/weather.component';
 import { TimeComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/time/time.component';
 import { LandingPageComponent } from './component/beneficiarycomponent/landing-page/landing-page.component';
+import { WordCardTitleComponent } from './component/beneficiarycomponent/lesson-content/word-card-title/word-card-title.component';
+import { QuizComponent } from './component/beneficiarycomponent/lesson-content/quiz/quiz.component';
+import { DialogeQuizComponent } from './component/beneficiarycomponent/lesson-content/dialoge-quiz/dialoge-quiz.component';
+import { FamilyQuizComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/family/family-quiz/family-quiz.component';
 
 const routes: Routes = [
   { path: 'word-groups', component: WordGroupComponent },
@@ -39,7 +43,13 @@ const routes: Routes = [
   { path: 'family', component: FamilyComponent } ,
   { path: 'weather', component: WeatherComponent } ,
   { path: 'time-day', component: TimeComponent } ,
-  { path: 'landing-page', component: LandingPageComponent }
+  { path: 'landing-page', component: LandingPageComponent } ,
+  { path: 'title', component: WordCardTitleComponent } ,
+  { path: 'quiz', component: QuizComponent } ,
+  { path: 'dialoge-quiz', component: DialogeQuizComponent } ,
+  { path: 'family-quiz', component: DialogeQuizComponent } ,
+    { path: 'family-words-quiz', component: FamilyQuizComponent } ,
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

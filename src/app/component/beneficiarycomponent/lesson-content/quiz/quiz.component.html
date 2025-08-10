@@ -1,0 +1,66 @@
+<div class="container">
+      <div class="header">
+        <h1 class="title">{{quizTitle}}</h1>
+        <div class="progress">
+          <div class="progress-bar" [style.width.%]="progressPercentage"></div>
+        </div>
+        <p>Question {{ currentIndex + 1 }} of {{ quizData.length }}</p>
+      </div>
+
+      <div *ngIf="!gameFinished" class="quiz-panel">
+        <div class="left-section">
+          <div class="input-section">
+            <label class="input-label">Type the German word:</label>
+            <input 
+              type="text" 
+              [(ngModel)]="userInput" 
+              class="german-input" 
+              placeholder=""
+              (keypress)="onKeyPress($event)"
+              #germanInput>
+            <div class="english-hint">English: {{ currentAnimal.english }}</div>
+          </div>
+        </div>
+        <div class="right-section">
+          <div class="animal-display" [class]="animationClass">
+            {{ currentAnimal.emoji }}
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="showResult && !gameFinished" 
+           class="result-panel" 
+           [ngClass]="{'correct': lastAnswerCorrect, 'incorrect': !lastAnswerCorrect}">
+        <h3>{{ resultMessage }}</h3>
+        <p>Correct answer: {{ currentAnimal.german }}</p>
+      </div>
+
+      <div class="buttons" *ngIf="!gameFinished">
+        <button 
+          *ngIf="!showResult" 
+          (click)="submitAnswer()" 
+          class="btn btn-primary"
+          [disabled]="!userInput.trim()">
+          Submit Answer
+        </button>
+        <button 
+          *ngIf="showResult" 
+          (click)="nextQuestion()" 
+          class="btn btn-secondary">
+          {{ currentIndex < quizData.length - 1 ? 'Next Question' : 'Show Results' }}
+        </button>
+      </div>
+
+      <div *ngIf="gameFinished" class="score-panel">
+        <h2>Quiz Complete! 🎉</h2>
+        <div class="final-score">{{ score }}/{{ quizData.length }}</div>
+        <div class="score-message">{{ scoreMessage }}</div>
+        <div class="results-list">
+          <div *ngFor="let answer of answers" class="result-item">
+            <span>{{ answer.animal.emoji }} {{ answer.animal.english }}</span>
+            <span>{{ answer.correct ? '✅' : '❌' }} {{ answer.userAnswer }} → {{ answer.animal.german }}</span>
+          </div>
+        </div>
+        <button (click)="restartQuiz()" class="btn btn-primary">Restart Quiz</button>
+      </div>
+    </div>

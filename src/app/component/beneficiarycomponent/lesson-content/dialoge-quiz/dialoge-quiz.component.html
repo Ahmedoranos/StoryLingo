@@ -1,0 +1,74 @@
+<div class="dialogue-quiz-container">
+  <div class="quiz-header">
+    <h2>German Conversation Practice</h2>
+    <div class="progress-bar">
+      <div class="progress" [style.width.%]="progressPercentage"></div>
+    </div>
+    <span class="progress-text">{{currentLineIndex + 1}} / {{dialogue.length}}</span>
+  </div>
+
+  <div class="conversation-area">
+    <div class="english-prompt">
+      <h3>Say in German:</h3>
+      <p class="prompt-text">{{currentLine.englishPrompt}}</p>
+    </div>
+
+    <div class="recording-section">
+      <div class="mic-container">
+        <button 
+          class="mic-button" 
+          [class.recording]="isRecording"
+          [class.processing]="isProcessing"
+          (click)="toggleRecording()"
+          [disabled]="isProcessing">
+          <i class="mic-icon">🎤</i>
+        </button>
+      </div>
+      
+      <div class="recording-status">
+        <span *ngIf="!isRecording && !isProcessing && !hasRecorded">Click to start recording</span>
+        <span *ngIf="isRecording" class="recording-text">Recording... Click to stop</span>
+        <span *ngIf="isProcessing">Processing...</span>
+        <span *ngIf="hasRecorded && !isProcessing">Recording saved!</span>
+      </div>
+
+      <div class="user-speech" *ngIf="userSpeech">
+        <strong>You said:</strong> {{userSpeech}}
+      </div>
+    </div>
+
+    <div class="computer-response" *ngIf="showComputerResponse">
+      <div class="response-header">
+        <h4>Computer Response:</h4>
+        <button class="play-button" (click)="playComputerResponse()" [disabled]="isPlaying">
+          {{isPlaying ? '🔊 Playing...' : '🔊 Play Response'}}
+        </button>
+      </div>
+      <p class="response-text">{{currentLine.personB}}</p>
+    </div>
+
+    <div class="controls">
+      <button 
+        class="next-button" 
+        (click)="nextLine()" 
+        *ngIf="showComputerResponse && !isLastLine">
+        Next →
+      </button>
+      <button 
+        class="finish-button" 
+        (click)="finishQuiz()" 
+        *ngIf="showComputerResponse && isLastLine">
+        Finish Quiz
+      </button>
+      <button class="reset-button" (click)="resetCurrentLine()" *ngIf="hasRecorded">
+        Try Again
+      </button>
+    </div>
+  </div>
+
+  <div class="quiz-complete" *ngIf="quizCompleted">
+    <h3>🎉 Congratulations!</h3>
+    <p>You've completed the German conversation practice!</p>
+    <button class="restart-button" (click)="restartQuiz()">Start Over</button>
+  </div>
+</div>

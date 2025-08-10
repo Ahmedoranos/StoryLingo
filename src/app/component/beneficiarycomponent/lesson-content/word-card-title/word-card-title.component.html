@@ -1,0 +1,45 @@
+<div class="container my-5">
+  <div class="card-custom text-center mx-auto" style="max-width: 650px;">
+    <!-- Enhanced title section -->
+    <div class="title-section mb-4">
+      <span class="emoji-large">{{emoji}}</span>
+      <h3 class="fw-bold mb-3">{{title}}</h3>
+      
+      <!-- Info tags for key information -->
+      <div class="info-tags-container mb-3">
+        <span class="info-tag">{{lessonWordCount}}</span>
+        <span class="info-tag">{{secondFlag}}</span>
+      </div>
+    </div>
+
+    <!-- Enhanced description with better structure -->
+    <div class="description-container">
+      <div class="intro-text mb-3">
+        <strong>{{description}}</strong>
+      </div>
+
+      <!-- Quick facts section -->
+      <div class="quick-facts mb-4">
+        <h5 class="facts-title">📋 What You'll Learn</h5>
+        <div class="fact-list">
+          <ng-content></ng-content>
+        </div>
+      </div>
+
+      <!-- How it works -->
+      <div class="how-it-works mb-4">
+        <p><strong>How it works:</strong> {{howItWork}}</p>
+      </div>
+
+      <!-- Ready prompt -->
+      <div class="ready-prompt mb-4">
+        🎯 Ready to test your knowledge? Click below to begin!
+      </div>
+    </div>
+
+    <!-- Enhanced button -->
+    <button class="start-btn" (click)="navigate()">
+      🚀 Start Test
+    </button>
+  </div>
+</div>

@@ -38,6 +38,13 @@ import { GreetingsComponent } from './component/beneficiarycomponent/lesson-cont
 import { WeatherComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/weather/weather.component';
 import { TimeComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/time/time.component';
 import { LandingPageComponent } from './component/beneficiarycomponent/landing-page/landing-page.component';
+import { CommonStructureComponent } from './component/beneficiarycomponent/grammar-role/components/common-structure/common-structure.component';
+import { WordCardTitleComponent } from './component/beneficiarycomponent/lesson-content/word-card-title/word-card-title.component';
+import { QuizComponent } from './component/beneficiarycomponent/lesson-content/quiz/quiz.component';
+import { FormsModule } from '@angular/forms';
+import { DialogeQuizComponent } from './component/beneficiarycomponent/lesson-content/dialoge-quiz/dialoge-quiz.component';
+import { CheckNoteComponent } from './component/beneficiarycomponent/lesson-content/word-card-title/check-note/check-note.component';
+import { FamilyQuizComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/family/family-quiz/family-quiz.component';
 
 @NgModule({
   declarations: [
@@ -78,10 +85,17 @@ import { LandingPageComponent } from './component/beneficiarycomponent/landing-p
     WeatherComponent,
     TimeComponent,
     LandingPageComponent,
+    CommonStructureComponent,
+    WordCardTitleComponent,
+    QuizComponent,
+    DialogeQuizComponent,
+    CheckNoteComponent,
+    FamilyQuizComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
