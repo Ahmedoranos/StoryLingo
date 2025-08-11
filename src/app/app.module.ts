@@ -45,6 +45,9 @@ import { FormsModule } from '@angular/forms';
 import { DialogeQuizComponent } from './component/beneficiarycomponent/lesson-content/dialoge-quiz/dialoge-quiz.component';
 import { CheckNoteComponent } from './component/beneficiarycomponent/lesson-content/word-card-title/check-note/check-note.component';
 import { FamilyQuizComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/family/family-quiz/family-quiz.component';
+import { LoginComponent } from './component/beneficiarycomponent/auth/login/login.component';
+import { RegisterComponent } from './component/beneficiarycomponent/auth/register/register.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -91,11 +94,14 @@ import { FamilyQuizComponent } from './component/beneficiarycomponent/lesson-con
     DialogeQuizComponent,
     CheckNoteComponent,
     FamilyQuizComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

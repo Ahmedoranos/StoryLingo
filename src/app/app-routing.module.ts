@@ -23,6 +23,8 @@ import { WordCardTitleComponent } from './component/beneficiarycomponent/lesson-
 import { QuizComponent } from './component/beneficiarycomponent/lesson-content/quiz/quiz.component';
 import { DialogeQuizComponent } from './component/beneficiarycomponent/lesson-content/dialoge-quiz/dialoge-quiz.component';
 import { FamilyQuizComponent } from './component/beneficiarycomponent/lesson-content/lesson-content-a1/family/family-quiz/family-quiz.component';
+import { LoginComponent } from './component/beneficiarycomponent/auth/login/login.component';
+import { RegisterComponent } from './component/beneficiarycomponent/auth/register/register.component';
 
 const routes: Routes = [
   { path: 'word-groups', component: WordGroupComponent },
@@ -48,8 +50,9 @@ const routes: Routes = [
   { path: 'quiz', component: QuizComponent } ,
   { path: 'dialoge-quiz', component: DialogeQuizComponent } ,
   { path: 'family-quiz', component: DialogeQuizComponent } ,
-    { path: 'family-words-quiz', component: FamilyQuizComponent } ,
-
+  { path: 'family-words-quiz', component: FamilyQuizComponent } ,
+  { path: 'login', component: LoginComponent } ,
+  { path: 'register', component: RegisterComponent } 
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
